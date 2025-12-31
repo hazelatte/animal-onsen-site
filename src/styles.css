@@ -59,7 +59,7 @@ img {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem 1.5rem;
 }
 
 .hero-clouds {
@@ -147,7 +147,7 @@ img {
 }
 
 .main-content {
-  padding: 1.5rem 1.5rem calc(var(--dock-height) + 3rem);
+  padding: 0.75rem 1.5rem calc(var(--dock-height) + 3rem);
   max-width: 880px;
   margin: 0 auto;
 }
@@ -246,8 +246,8 @@ img {
   background-image: url('/img/foreground.png');
   background-repeat: repeat-x;
   background-size: auto;
-  background-position: 0 calc(100% + 126px);
-  transform: translateY(251px) scale(0.5);
+  background-position: 0 50%;
+  transform: scale(0.5);
   z-index: 3;
 }
 
@@ -261,7 +261,7 @@ img {
 
 .bottom-animal {
   position: absolute;
-  bottom: -10px;
+  bottom: -60px;
   width: min(220px, 40vw);
   transform: translateX(-50%) scale(0.5);
   transition: transform 0.2s ease;
