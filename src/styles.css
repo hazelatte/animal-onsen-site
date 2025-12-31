@@ -184,6 +184,9 @@ img {
 
 .bottom-layer.foreground {
   background-image: url('/img/foreground.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center bottom;
 }
 
 .bottom-animal {
