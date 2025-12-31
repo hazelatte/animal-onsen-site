@@ -38,7 +38,8 @@ body::before {
     rgba(255, 239, 218, 0.45) 32px,
     rgba(255, 239, 218, 0.45) 64px
   );
-  animation: stripe-drift 40s linear infinite;
+  background-size: 120px 120px;
+  animation: stripe-drift 24s linear infinite;
 }
 
 img {
@@ -52,13 +53,13 @@ img {
 
 .hero {
   position: relative;
-  height: 70vh;
-  min-height: 520px;
+  height: 68vh;
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem 1.5rem 3rem;
+  padding: 2rem 1.5rem 2.5rem;
 }
 
 .hero-clouds {
@@ -87,7 +88,7 @@ img {
     background-position: 0 0;
   }
   to {
-    background-position: 64px 64px;
+    background-position: 120px 120px;
   }
 }
 
@@ -154,7 +155,7 @@ img {
 }
 
 .main-content {
-  padding: 2rem 1.5rem calc(var(--dock-height) + 3rem);
+  padding: 1.5rem 1.5rem calc(var(--dock-height) + 3rem);
   max-width: 880px;
   margin: 0 auto;
 }
@@ -222,14 +223,20 @@ img {
   height: var(--dock-height);
   pointer-events: none;
   z-index: 5;
+  overflow: hidden;
 }
 
 .bottom-layer {
   position: absolute;
-  inset: 0;
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 200%;
   background-repeat: repeat-x;
-  background-size: auto 50%;
+  background-size: auto;
   background-position: 0 bottom;
+  transform: scale(0.5);
+  transform-origin: left bottom;
 }
 
 .bottom-layer.background {
@@ -243,7 +250,7 @@ img {
 .bottom-layer.foreground {
   background-image: url('/img/foreground.png');
   background-repeat: repeat-x;
-  background-size: auto 50%;
+  background-size: auto;
   background-position: 0 bottom;
 }
 
