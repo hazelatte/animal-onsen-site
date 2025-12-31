@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&family=Cardo:wght@400;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #3a2f2a;
+  --muted: #6c5a4d;
+  --cream: #fff5e6;
+  --cloud: #f6fbff;
+  --accent: #f5a86b;
+  --accent-dark: #e38a4d;
+  --secondary: #ffd9b8;
+  --button-shadow: rgba(60, 40, 20, 0.2);
+  --dock-height: 220px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff7ea 0%, #fbeedc 55%, #f6e2cf 100%);
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  height: 70vh;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 1.5rem 6rem;
+}
+
+.hero-clouds {
+  position: absolute;
+  inset: 0;
+  background-image: url('/img/clouds.png');
+  background-repeat: repeat-x;
+  background-position: 0 50%;
+  background-size: auto 100%;
+  opacity: 0.9;
+  animation: cloud-drift 35s linear infinite;
+  z-index: 0;
+}
+
+@keyframes cloud-drift {
+  from {
+    background-position: 0 50%;
+  }
+  to {
+    background-position: -2000px 50%;
+  }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-logo {
+  width: min(520px, 85vw);
+  filter: drop-shadow(0 12px 16px rgba(60, 40, 20, 0.25));
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(720px, 92vw);
+}
+
+.hero-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.primary-row .pill.primary {
+  font-size: 1.1rem;
+  padding: 0.95rem 2.4rem;
+  background: var(--accent);
+  color: #2d1f15;
+  box-shadow: 0 8px 16px var(--button-shadow);
+}
+
+.pill {
+  border: none;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--ink);
+  padding: 0.75rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 10px var(--button-shadow);
+}
+
+.pill.ghost {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.pill:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 2px 6px var(--button-shadow);
+  background: var(--accent-dark);
+  color: #2b1c12;
+}
+
+.main-content {
+  padding: 3rem 1.5rem calc(var(--dock-height) + 3rem);
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-family: 'Cardo', 'Georgia', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1rem;
+}
+
+.about p,
+.spacer p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.spacer {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  box-shadow: 0 10px 24px rgba(80, 50, 20, 0.1);
+}
+
+.spacer h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.bottom-scene {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--dock-height);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.bottom-layer {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.bottom-layer.background {
+  background-image: url('/img/background.png');
+}
+
+.bottom-layer.foreground {
+  background-image: url('/img/foreground.png');
+}
+
+.bottom-animal {
+  position: absolute;
+  bottom: 20px;
+  width: min(220px, 40vw);
+  transform: translateX(-50%);
+  transition: transform 0.2s ease;
+}
+
+.bottom-animal.facing-right {
+  transform: translateX(-50%) scaleX(-1);
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 480px;
+  }
+
+  .primary-row {
+    flex-direction: column;
+  }
+
+  .primary-row .pill.primary {
+    width: 100%;
+  }
+
+  .hero-actions-row {
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    height: 65vh;
+  }
+
+  .pill {
+    width: 100%;
+  }
+}
