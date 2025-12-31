@@ -46,6 +46,7 @@ export default function BottomScene() {
     <div className="bottom-scene" aria-hidden="true">
       <div className="bottom-layer background" />
       <div className="bottom-layer water" />
+      <div className="bottom-layer mid-foreground" />
       <img
         className={`bottom-animal ${facingRight ? 'facing-right' : ''}`}
         src="/img/cat.png"

@@ -39,7 +39,6 @@ body::before {
     rgba(255, 239, 218, 0.45) 64px
   );
   background-size: 120px 120px;
-  animation: stripe-drift 24s linear infinite;
 }
 
 img {
@@ -83,14 +82,6 @@ img {
   }
 }
 
-@keyframes stripe-drift {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 120px 120px;
-  }
-}
 
 .hero-inner {
   position: relative;
@@ -247,6 +238,13 @@ img {
   background-image: url('/img/water.png');
 }
 
+.bottom-layer.mid-foreground {
+  background-image: url('/img/foreground.png');
+  background-repeat: repeat-x;
+  background-size: auto;
+  background-position: 0 calc(100% + 126px);
+}
+
 .bottom-layer.foreground {
   background-image: url('/img/foreground.png');
   background-repeat: repeat-x;
@@ -258,12 +256,12 @@ img {
   position: absolute;
   bottom: 20px;
   width: min(220px, 40vw);
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0.5);
   transition: transform 0.2s ease;
 }
 
 .bottom-animal.facing-right {
-  transform: translateX(-50%) scaleX(-1);
+  transform: translateX(-50%) scale(0.5) scaleX(-1);
 }
 
 @media (max-width: 720px) {
