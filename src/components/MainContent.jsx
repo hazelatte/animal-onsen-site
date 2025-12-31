@@ -21,6 +21,17 @@ export default function MainContent() {
           events, or surprises tucked into the mountains.
         </p>
       </section>
+      <section className="video-section" aria-label="Trailer video">
+        <h3>Early peek</h3>
+        <div className="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/WGm5ULQucfk?autoplay=1&mute=1&playsinline=1&controls=1&rel=0"
+            title="Animal Onsen teaser"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </section>
       <section className="spacer">
         <h3>More onsen stories coming soon</h3>
         <p>
