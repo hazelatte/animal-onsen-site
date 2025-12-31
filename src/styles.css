@@ -31,14 +31,13 @@ body::before {
   inset: 0;
   z-index: -1;
   opacity: 0.45;
-  background-image: linear-gradient(
+  background-image: repeating-linear-gradient(
     135deg,
-    rgba(245, 168, 107, 0.2) 0%,
-    rgba(245, 168, 107, 0.2) 50%,
-    rgba(255, 239, 218, 0.45) 50%,
-    rgba(255, 239, 218, 0.45) 100%
+    rgba(245, 168, 107, 0.2) 0px,
+    rgba(245, 168, 107, 0.2) 32px,
+    rgba(255, 239, 218, 0.45) 32px,
+    rgba(255, 239, 218, 0.45) 64px
   );
-  background-size: 160px 160px;
   animation: stripe-drift 40s linear infinite;
 }
 
@@ -88,7 +87,7 @@ img {
     background-position: 0 0;
   }
   to {
-    background-position: 160px 160px;
+    background-position: 64px 64px;
   }
 }
 
@@ -229,7 +228,7 @@ img {
   position: absolute;
   inset: 0;
   background-repeat: repeat-x;
-  background-size: auto 80%;
+  background-size: auto;
   background-position: 0 bottom;
 }
 
@@ -244,7 +243,7 @@ img {
 .bottom-layer.foreground {
   background-image: url('/img/foreground.png');
   background-repeat: repeat-x;
-  background-size: auto 80%;
+  background-size: auto;
   background-position: 0 bottom;
 }
 
