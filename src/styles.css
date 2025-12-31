@@ -53,13 +53,13 @@ img {
 
 .hero {
   position: relative;
-  height: 68vh;
-  min-height: 500px;
+  height: 50vh;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1.5rem 1.25rem 1rem;
 }
 
 .hero-clouds {
@@ -91,11 +91,11 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .hero-logo {
-  width: min(520px, 85vw);
+  width: min(500px, 85vw);
   filter: drop-shadow(0 12px 16px rgba(60, 40, 20, 0.25));
 }
 
@@ -115,11 +115,123 @@ img {
 }
 
 .primary-row .pill.primary {
-  font-size: 1.1rem;
-  padding: 0.95rem 2.4rem;
-  background: var(--accent);
+  font-size: 1.15rem;
+  padding: 1rem 2.4rem;
+  background: #f8cfa5;
+  color: #6b4b3a;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 243, 226, 0.9),
+    0 10px 18px rgba(60, 40, 20, 0.16);
+  border: 3px solid transparent;
+  outline: 3px dashed rgba(255, 243, 226, 0.75);
+  outline-offset: -11px;
+  text-shadow:
+    2px 0 0 rgba(255, 245, 230, 0.85),
+    -2px 0 0 rgba(255, 245, 230, 0.85),
+    0 2px 0 rgba(255, 245, 230, 0.85),
+    0 -2px 0 rgba(255, 245, 230, 0.85),
+    1px 1px 0 rgba(255, 245, 230, 0.6),
+    -1px 1px 0 rgba(255, 245, 230, 0.6),
+    1px -1px 0 rgba(255, 245, 230, 0.6),
+    -1px -1px 0 rgba(255, 245, 230, 0.6);
+  position: relative;
+  overflow: hidden;
+  animation: pulse-cta 2.2s ease-in-out infinite;
+  transition: box-shadow 0.2s ease, outline-color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  will-change: transform;
+}
+
+.primary-row .pill.primary:hover,
+.primary-row .pill.primary:focus-visible {
+  border-color: rgba(90, 60, 44, 0.9);
+  outline-color: rgba(255, 245, 230, 1);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 243, 226, 0.9),
+    0 14px 22px rgba(60, 40, 20, 0.22),
+    0 0 0 3px rgba(255, 245, 230, 0.75);
+}
+
+.primary-row .pill.primary::after {
+  content: none;
+}
+
+@keyframes pulse-cta {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 18px rgba(60, 40, 20, 0.18);
+  }
+  50% {
+    transform: scale(1.12);
+    box-shadow: 0 14px 24px rgba(60, 40, 20, 0.24);
+  }
+}
+
+.hero-header {
+  position: absolute;
+  top: 1.2rem;
+  left: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(58, 47, 42, 0.7);
+  z-index: 2;
+}
+
+.hero-link {
+  border: none;
+  background: transparent;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.hero-link:hover,
+.hero-link:focus-visible {
   color: #2d1f15;
-  box-shadow: 0 8px 16px var(--button-shadow);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.social-row {
+  margin-top: 0.8rem;
+  gap: 0.65rem;
+}
+
+.pill.icon-pill {
+  width: 3.1rem;
+  height: 3.1rem;
+  padding: 0;
+  border: none;
+  background: #f8cfa5;
+  color: #6b4b3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  outline: 2px solid transparent;
+  box-shadow:
+    0 8px 14px rgba(60, 40, 20, 0.14);
+}
+
+.pill.icon-pill img {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.pill.icon-pill:hover,
+.pill.icon-pill:focus-visible {
+  background: #f9d9b8;
+  outline: 3px solid rgba(90, 60, 44, 0.75);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 243, 226, 0.9),
+    0 10px 18px rgba(60, 40, 20, 0.2);
 }
 
 .pill {
@@ -130,6 +242,7 @@ img {
   padding: 0.75rem 1.6rem;
   font-size: 1rem;
   font-weight: 600;
+  font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
   cursor: pointer;
   transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: 0 4px 10px var(--button-shadow);
@@ -147,7 +260,7 @@ img {
 }
 
 .main-content {
-  padding: 0.75rem 1.5rem calc(var(--dock-height) + 3rem);
+  padding: 0.0rem 1.5rem calc(var(--dock-height) + 3rem);
   max-width: 880px;
   margin: 0 auto;
 }
@@ -240,13 +353,14 @@ img {
 .bottom-layer.water {
   background-image: url('/img/water.png');
   z-index: 2;
+  animation: water-drift 75s linear infinite;
 }
 
 .bottom-layer.mid-foreground {
   background-image: url('/img/foreground.png');
   background-repeat: repeat-x;
   background-size: auto;
-  background-position: 0 calc(50% + 60px);
+  background-position: 0 calc(50% + 90px);
   transform: scale(0.5);
   z-index: 3;
 }
@@ -257,6 +371,15 @@ img {
   background-size: auto;
   background-position: 0 bottom;
   z-index: 5;
+}
+
+@keyframes water-drift {
+  from {
+    background-position: 0 bottom;
+  }
+  to {
+    background-position: -2000px bottom;
+  }
 }
 
 .bottom-animal {
@@ -274,7 +397,7 @@ img {
 
 @media (max-width: 720px) {
   .hero {
-    min-height: 480px;
+    min-height: 400px;
   }
 
   .primary-row {
@@ -282,7 +405,7 @@ img {
   }
 
   .primary-row .pill.primary {
-    width: 100%;
+    width: auto;
   }
 
   .hero-actions-row {
@@ -292,7 +415,7 @@ img {
 
 @media (max-width: 520px) {
   .hero {
-    height: 65vh;
+    height: 58vh;
   }
 
   .pill {
