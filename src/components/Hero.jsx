@@ -31,6 +31,11 @@ export default function Hero() {
         <div className="hero-actions">
           <div className="hero-actions-row primary-row">
             <span className="cta-wrapper">
+              <span className="cta-seam" aria-hidden="true">
+                <svg viewBox="0 0 100 32" role="presentation" preserveAspectRatio="none">
+                  <rect x="2" y="2" width="96" height="28" rx="12" ry="12" pathLength="100" />
+                </svg>
+              </span>
               <button className="pill primary" type="button">
                 Wishlist on Steam
               </button>

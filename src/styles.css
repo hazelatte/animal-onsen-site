@@ -118,6 +118,8 @@ img {
   display: inline-flex;
   animation: pulse-cta 2.2s ease-in-out infinite;
   will-change: transform;
+  position: relative;
+  overflow: visible;
 }
 
 .primary-row .pill.primary {
@@ -141,14 +143,15 @@ img {
     -1px -1px 0 rgba(255, 245, 230, 0.6);
   position: relative;
   overflow: hidden;
-  transition: box-shadow 0.2s ease, outline-color 0.2s ease, border-color 0.2s ease, transform 0.08s ease;
+  z-index: 1;
+  transition: box-shadow 0.35s ease, outline-color 0.35s ease, border-color 0.35s ease, transform 0.08s ease;
 }
 
 .primary-row .pill.primary:hover,
 .primary-row .pill.primary:focus-visible {
   box-shadow:
     0 14px 22px rgba(60, 40, 20, 0.22),
-    0 0 0 3px rgba(90, 60, 44, 0.9);
+    0 0 0 3px rgba(90, 60, 44, 0.75);
 }
 
 .primary-row .pill.primary:active {
@@ -158,12 +161,39 @@ img {
 }
 
 .primary-row .pill.primary::after {
-  content: '';
+  content: none;
+}
+
+.cta-seam {
   position: absolute;
-  inset: 7px;
-  border: 3px dashed rgba(255, 243, 226, 0.75);
-  border-radius: 999px;
+  inset: 5px;
   pointer-events: none;
+  z-index: 2;
+}
+
+.cta-seam svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cta-seam rect {
+  fill: none;
+  stroke: rgba(255, 243, 226, 0.75);
+  stroke-width: 3px;
+  stroke-dasharray: 1.5 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  animation: seam-marquee 9s linear infinite;
+}
+
+@keyframes seam-marquee {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -64;
+  }
 }
 
 @keyframes pulse-cta {
@@ -227,6 +257,7 @@ img {
   justify-content: center;
   line-height: 0;
   outline: 2px solid transparent;
+  transition: box-shadow 0.35s ease, background 0.2s ease;
   box-shadow:
     0 8px 14px rgba(60, 40, 20, 0.14);
 }
@@ -242,6 +273,12 @@ img {
   box-shadow:
     0 10px 18px rgba(60, 40, 20, 0.2),
     0 0 0 3px rgba(90, 60, 44, 0.75);
+}
+
+.pill.icon-pill:active {
+  background: #f8cfa5;
+  box-shadow:
+    0 6px 12px rgba(60, 40, 20, 0.2);
 }
 
 .pill {
