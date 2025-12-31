@@ -38,7 +38,8 @@ body::before {
     rgba(255, 239, 218, 0.45) 32px,
     rgba(255, 239, 218, 0.45) 64px
   );
-  background-size: 120px 120px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 img {
@@ -228,14 +229,17 @@ img {
   background-position: 0 bottom;
   transform: scale(0.5);
   transform-origin: left bottom;
+  z-index: 1;
 }
 
 .bottom-layer.background {
   background-image: url('/img/background.png');
+  z-index: 1;
 }
 
 .bottom-layer.water {
   background-image: url('/img/water.png');
+  z-index: 2;
 }
 
 .bottom-layer.mid-foreground {
@@ -243,6 +247,8 @@ img {
   background-repeat: repeat-x;
   background-size: auto;
   background-position: 0 calc(100% + 126px);
+  transform: translateY(251px) scale(0.5);
+  z-index: 3;
 }
 
 .bottom-layer.foreground {
@@ -250,14 +256,16 @@ img {
   background-repeat: repeat-x;
   background-size: auto;
   background-position: 0 bottom;
+  z-index: 5;
 }
 
 .bottom-animal {
   position: absolute;
-  bottom: 20px;
+  bottom: -10px;
   width: min(220px, 40vw);
   transform: translateX(-50%) scale(0.5);
   transition: transform 0.2s ease;
+  z-index: 4;
 }
 
 .bottom-animal.facing-right {
