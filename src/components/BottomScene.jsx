@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 
 export default function BottomScene() {
-  const [animalX, setAnimalX] = useState(50)
+  const [animalX, setAnimalX] = useState(85)
   const [facingRight, setFacingRight] = useState(false)
   const [isPopping, setIsPopping] = useState(false)
   const [hearts, setHearts] = useState([])
-  const positionRef = useRef(50)
-  const targetRef = useRef(50)
+  const positionRef = useRef(85)
+  const targetRef = useRef(85)
   const lastScrollY = useRef(0)
   const pendingDelta = useRef(0)
   const rafId = useRef(null)
   const moveRaf = useRef(null)
+  const velocityRef = useRef(0)
   const boundsRef = useRef({ min: 0, max: 0 })
   const sceneRef = useRef(null)
   const wrapRef = useRef(null)
@@ -49,7 +50,7 @@ export default function BottomScene() {
       if (max <= min) return
       if (delta === 0) return
       const direction = delta > 0 ? -1 : 1
-      const moveAmount = Math.min(6.5, Math.abs(delta) * 0.18)
+      const moveAmount = Math.min(1.2, Math.abs(delta) * 0.02)
       const currentTarget = targetRef.current ?? (min + max) / 2
       let nextX = currentTarget + direction * moveAmount
 
@@ -81,6 +82,7 @@ export default function BottomScene() {
 
     const handleWheel = (event) => {
       const delta = event.deltaY !== 0 ? event.deltaY : event.deltaX
+      velocityRef.current += delta * 0.04
       scheduleMove(delta)
     }
 
@@ -89,9 +91,14 @@ export default function BottomScene() {
     document.addEventListener('wheel', handleWheel, { passive: true })
 
     const animate = () => {
+      const velocity = velocityRef.current
+      if (Math.abs(velocity) > 0.01) {
+        moveAnimal(velocity)
+        velocityRef.current = velocity * 0.9
+      }
       const current = positionRef.current ?? animalX
       const target = targetRef.current ?? current
-      const next = current + (target - current) * 0.3
+      const next = current + (target - current) * 0.08
 
       positionRef.current = next
       setAnimalX(next)

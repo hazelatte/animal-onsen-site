@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
@@ -226,7 +230,7 @@ img {
   border: none;
   background: transparent;
   color: var(--ink);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
   padding: 0.2rem 0.4rem;
