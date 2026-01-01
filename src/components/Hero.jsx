@@ -1,26 +1,15 @@
-import { useEffect, useState } from 'react'
-
 export default function Hero() {
-  const [pressNotice, setPressNotice] = useState(false)
-
-  useEffect(() => {
-    if (!pressNotice) return
-    const timer = setTimeout(() => setPressNotice(false), 2200)
-    return () => clearTimeout(timer)
-  }, [pressNotice])
-
   return (
     <section className="hero">
       <div className="hero-clouds" aria-hidden="true" />
       <div className="hero-header">
-        <button
+        <a
           className="hero-link"
-          type="button"
-          onClick={() => setPressNotice(true)}
+          href="/presskit.zip"
+          download
         >
           Press Kit
-        </button>
-        {pressNotice && <span className="press-notice">Available soon!</span>}
+        </a>
       </div>
       <div className="hero-inner">
         <img

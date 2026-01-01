@@ -230,6 +230,7 @@ img {
   font-weight: 600;
   cursor: pointer;
   padding: 0.2rem 0.4rem;
+  text-decoration: none;
 }
 
 .hero-link:hover,
