@@ -15,28 +15,22 @@ export default function MainContent() {
       <section className="about">
         <h2>About the game</h2>
         <p>
-          Animal Onsen is a cozy bathhouse sim where gentle routines and little
-          rituals turn into a tiny world of calm. This is placeholder copy that
-          will later describe the core loop, the setting, and the overall mood.
+          Animal Onsen is a cozy and relaxing companion game. It lives at the bottom of your screen while you work, study, or unwind. Decorate your onsen, upgrade amenities, and collect adorable animal visitors as you build the perfect retreat, one peaceful moment at a time.
         </p>
         <p>
-          Placeholder paragraph for feature one: describe the onsen upgrades,
-          soothing ambience, and why animals keep coming back.
+          Start small, then grow your onsen into a little getaway. Upgrade amenities, improve comfort, and create the kind of soothing space that makes regulars linger (and leave better tips).
         </p>
         <p>
-          Placeholder paragraph for feature two: talk about collecting
-          ingredients, customizing baths, or discovering new visitors.
+          Unlock new themed onsens as you hit simple milestones, then decorate each one to match the vibe. Some animals are drawn to specific themes, and collecting them all becomes a cozy long-term goal.
         </p>
         <p>
-          Placeholder paragraph for feature three: hint at story beats, seasonal
-          events, or surprises tucked into the mountains.
+          Expect small surprises along the way: milestone messages, seasonal moments, and the occasional gift from a grateful guest, plus a warm “we missed you” when you return after a break.
         </p>
       </section>
       <section className="spacer">
-        <h3>More onsen stories coming soon</h3>
+        <h3>More onsen moments coming soon</h3>
         <p>
-          Extra space so the page scrolls and the bottom dock can show off the
-          movement. Replace this later with screenshots, devlogs, or a roadmap.
+          This space will become screenshots, devlogs, and a simple roadmap as the game grows. In the meantime, you can wishlist on Steam and join the Discord to follow development.
         </p>
       </section>
     </main>

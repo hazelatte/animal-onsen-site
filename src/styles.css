@@ -291,6 +291,7 @@ img {
   font-weight: 600;
   font-family: 'Baloo 2', 'Trebuchet MS', sans-serif;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 0.1s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: 0 4px 10px var(--button-shadow);
 }
@@ -404,7 +405,7 @@ img {
 }
 
 .bottom-layer.mid-foreground {
-  background-image: url('/img/foreground.png');
+  background-image: url('/img/upper.png');
   background-repeat: repeat-x;
   background-size: auto;
   background-position: 0 calc(50% + 90px);
@@ -413,7 +414,7 @@ img {
 }
 
 .bottom-layer.foreground {
-  background-image: url('/img/foreground.png');
+  background-image: url('/img/lower.png');
   background-repeat: repeat-x;
   background-size: auto;
   background-position: 0 bottom;
@@ -429,17 +430,52 @@ img {
   }
 }
 
-.bottom-animal {
+.bottom-animal-wrap {
   position: absolute;
-  bottom: -60px;
-  width: min(220px, 40vw);
-  transform: translateX(-50%) scale(0.5);
-  transition: transform 0.2s ease;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: min(110px, 20vw);
   z-index: 4;
 }
 
-.bottom-animal.facing-right {
-  transform: translateX(-50%) scale(0.5) scaleX(-1);
+.bottom-animal {
+  width: 100%;
+  transform: scaleX(var(--cat-flip, 1)) scale(var(--cat-scale, 1));
+  transform-origin: center bottom;
+  transition: transform 0.2s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.bottom-heart {
+  position: absolute;
+  bottom: calc(100% - 24px);
+  width: 28px;
+  height: 28px;
+  left: 50%;
+  transform: translateX(var(--heart-offset, 0));
+  opacity: 0;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.bottom-heart.show {
+  animation: heart-pop 600ms ease-out;
+}
+
+@keyframes heart-pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -20%) scale(0.8);
+  }
+  35% {
+    opacity: 1;
+    transform: translate(-50%, -45%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -85%) scale(0.9);
+  }
 }
 
 @media (max-width: 720px) {

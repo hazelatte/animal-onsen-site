@@ -36,27 +36,62 @@ export default function Hero() {
                   <rect x="2" y="2" width="96" height="28" rx="12" ry="12" pathLength="100" />
                 </svg>
               </span>
-              <button className="pill primary" type="button">
+              <a
+                className="pill primary"
+                href="https://store.steampowered.com/app/3808610/Animal_Onsen_A_Cozy_Retreat/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Wishlist on Steam
-              </button>
+              </a>
             </span>
           </div>
           <div className="hero-actions-row social-row" aria-label="Social links">
-            <button className="pill icon-pill" type="button" aria-label="Discord">
+            <a
+              className="pill icon-pill"
+              href="https://discord.gg/6cWXTAaQ9q"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Discord"
+            >
               <img src="/img/social/discord.svg" alt="" aria-hidden="true" />
-            </button>
-            <button className="pill icon-pill" type="button" aria-label="YouTube">
+            </a>
+            <a
+              className="pill icon-pill"
+              href="https://www.youtube.com/@hazelsxia"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="YouTube"
+            >
               <img src="/img/social/youtube.svg" alt="" aria-hidden="true" />
-            </button>
-            <button className="pill icon-pill" type="button" aria-label="TikTok">
+            </a>
+            <a
+              className="pill icon-pill"
+              href="https://www.tiktok.com/@hazelsxia"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+            >
               <img src="/img/social/tiktok.svg" alt="" aria-hidden="true" />
-            </button>
-            <button className="pill icon-pill" type="button" aria-label="Instagram">
+            </a>
+            <a
+              className="pill icon-pill"
+              href="https://www.instagram.com/hazelsxia/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
               <img src="/img/social/instagram.svg" alt="" aria-hidden="true" />
-            </button>
-            <button className="pill icon-pill" type="button" aria-label="X">
+            </a>
+            <a
+              className="pill icon-pill"
+              href="https://x.com/hazelsxia"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="X"
+            >
               <img src="/img/social/x.svg" alt="" aria-hidden="true" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
