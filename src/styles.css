@@ -450,6 +450,9 @@ img {
   transition: transform 0.2s ease;
   pointer-events: auto;
   cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .bottom-heart {

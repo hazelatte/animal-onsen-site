@@ -129,7 +129,10 @@ export default function BottomScene() {
           role="button"
           tabIndex={0}
           aria-label="Cat"
+          draggable={false}
           onLoad={() => updateBoundsRef.current?.()}
+          onDragStart={(event) => event.preventDefault()}
+          onContextMenu={(event) => event.preventDefault()}
           onClick={() => {
             setIsPopping(true)
             setHearts((prev) => [
